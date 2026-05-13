@@ -1,0 +1,794 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+/* ==========================================
+   CRAIG OF THE CREEK - CARTOON NETWORK THEME
+   Transparent backgrounds with animated gradients
+   ========================================== */
+
+/* Craig Of The Creek Default Palette - semi-transparent for animated bg */
+:root {
+  --radius: 1rem;
+  --background: rgba(245, 237, 220, 0.85);
+  --foreground: #2C3E2D;
+  --card: rgba(255, 255, 255, 0.88);
+  --card-foreground: #2C3E2D;
+  --popover: rgba(255, 255, 255, 0.92);
+  --popover-foreground: #2C3E2D;
+  --primary: #FF8C42;
+  --primary-foreground: #FFFFFF;
+  --secondary: #6BCB77;
+  --secondary-foreground: #FFFFFF;
+  --muted: rgba(232, 223, 200, 0.7);
+  --muted-foreground: #6B7B6B;
+  --accent: #4FC0D0;
+  --accent-foreground: #FFFFFF;
+  --destructive: #FF6B6B;
+  --border: #3D5A3E;
+  --input: #3D5A3E;
+  --ring: #FF8C42;
+  --chart-1: #FF8C42;
+  --chart-2: #6BCB77;
+  --chart-3: #4FC0D0;
+  --chart-4: #FFD93D;
+  --chart-5: #FF6B6B;
+  --sidebar: #2C3E2D;
+  --sidebar-foreground: #F5EDDC;
+  --sidebar-primary: #FF8C42;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #6BCB77;
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: #3D5A3E;
+  --sidebar-ring: #FF8C42;
+  /* Theme background gradient */
+  --theme-bg-1: #A8D5BA;
+  --theme-bg-2: #F5EDDC;
+  --theme-bg-3: #6BCB77;
+  --theme-bg-4: #FF8C42;
+}
+
+/* Generic dark mode fallback */
+.dark {
+  --background: rgba(26, 26, 46, 0.85);
+  --foreground: #E0E0E0;
+  --card: rgba(22, 33, 62, 0.88);
+  --card-foreground: #E0E0E0;
+  --popover: rgba(22, 33, 62, 0.92);
+  --popover-foreground: #E0E0E0;
+  --primary: #E94560;
+  --primary-foreground: #FFFFFF;
+  --secondary: #533483;
+  --secondary-foreground: #E0E0E0;
+  --muted: rgba(15, 52, 96, 0.7);
+  --muted-foreground: #A0A0B0;
+  --accent: #4FC0D0;
+  --accent-foreground: #FFFFFF;
+  --destructive: #E94560;
+  --border: #533483;
+  --input: #533483;
+  --ring: #E94560;
+  --chart-1: #E94560;
+  --chart-2: #533483;
+  --chart-3: #4FC0D0;
+  --chart-4: #FFD93D;
+  --chart-5: #6BCB77;
+  --sidebar: #0F3460;
+  --sidebar-foreground: #E0E0E0;
+  --sidebar-primary: #E94560;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #533483;
+  --sidebar-accent-foreground: #E0E0E0;
+  --sidebar-border: #533483;
+  --sidebar-ring: #E94560;
+}
+
+/* ==========================================
+   THEME CLASSES (must come AFTER .dark)
+   ========================================== */
+
+/* Cartoon Network Classic Theme */
+.theme-cartoon-network {
+  --background: rgba(255, 253, 231, 0.85);
+  --foreground: #212121;
+  --card: rgba(255, 255, 255, 0.88);
+  --card-foreground: #212121;
+  --popover: rgba(255, 255, 255, 0.92);
+  --popover-foreground: #212121;
+  --primary: #FF5722;
+  --primary-foreground: #FFFFFF;
+  --secondary: #FFC107;
+  --secondary-foreground: #212121;
+  --muted: rgba(255, 249, 196, 0.7);
+  --muted-foreground: #757575;
+  --accent: #00BCD4;
+  --accent-foreground: #FFFFFF;
+  --destructive: #F44336;
+  --border: #212121;
+  --input: #212121;
+  --ring: #FF5722;
+  --chart-1: #FF5722;
+  --chart-2: #FFC107;
+  --chart-3: #00BCD4;
+  --chart-4: #4CAF50;
+  --chart-5: #F44336;
+  --sidebar: #212121;
+  --sidebar-foreground: #FFFDE7;
+  --sidebar-primary: #FF5722;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #FFC107;
+  --sidebar-accent-foreground: #212121;
+  --sidebar-border: #424242;
+  --sidebar-ring: #FF5722;
+  --theme-bg-1: #FF5722;
+  --theme-bg-2: #FFC107;
+  --theme-bg-3: #00BCD4;
+  --theme-bg-4: #FFEB3B;
+}
+
+/* Adventure Cartoon Theme */
+.theme-adventure {
+  --background: rgba(255, 243, 224, 0.85);
+  --foreground: #4A3728;
+  --card: rgba(255, 255, 255, 0.88);
+  --card-foreground: #4A3728;
+  --popover: rgba(255, 255, 255, 0.92);
+  --popover-foreground: #4A3728;
+  --primary: #FF6F00;
+  --primary-foreground: #FFFFFF;
+  --secondary: #FFB74D;
+  --secondary-foreground: #4A3728;
+  --muted: rgba(255, 224, 178, 0.7);
+  --muted-foreground: #8D6E63;
+  --accent: #26A69A;
+  --accent-foreground: #FFFFFF;
+  --destructive: #EF5350;
+  --border: #5D4037;
+  --input: #5D4037;
+  --ring: #FF6F00;
+  --chart-1: #FF6F00;
+  --chart-2: #FFB74D;
+  --chart-3: #26A69A;
+  --chart-4: #FFD54F;
+  --chart-5: #EF5350;
+  --sidebar: #4A3728;
+  --sidebar-foreground: #FFF3E0;
+  --sidebar-primary: #FF6F00;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #FFB74D;
+  --sidebar-accent-foreground: #4A3728;
+  --sidebar-border: #5D4037;
+  --sidebar-ring: #FF6F00;
+  --theme-bg-1: #FF6F00;
+  --theme-bg-2: #FFB74D;
+  --theme-bg-3: #26A69A;
+  --theme-bg-4: #FFD54F;
+}
+
+/* Forest Cartoon Theme */
+.theme-forest {
+  --background: rgba(232, 245, 233, 0.85);
+  --foreground: #1B5E20;
+  --card: rgba(255, 255, 255, 0.88);
+  --card-foreground: #1B5E20;
+  --popover: rgba(255, 255, 255, 0.92);
+  --popover-foreground: #1B5E20;
+  --primary: #43A047;
+  --primary-foreground: #FFFFFF;
+  --secondary: #81C784;
+  --secondary-foreground: #1B5E20;
+  --muted: rgba(200, 230, 201, 0.7);
+  --muted-foreground: #4CAF50;
+  --accent: #8BC34A;
+  --accent-foreground: #1B5E20;
+  --destructive: #E57373;
+  --border: #2E7D32;
+  --input: #2E7D32;
+  --ring: #43A047;
+  --chart-1: #43A047;
+  --chart-2: #81C784;
+  --chart-3: #8BC34A;
+  --chart-4: #AED581;
+  --chart-5: #E57373;
+  --sidebar: #1B5E20;
+  --sidebar-foreground: #E8F5E9;
+  --sidebar-primary: #43A047;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #81C784;
+  --sidebar-accent-foreground: #1B5E20;
+  --sidebar-border: #2E7D32;
+  --sidebar-ring: #43A047;
+  --theme-bg-1: #2E7D32;
+  --theme-bg-2: #81C784;
+  --theme-bg-3: #8BC34A;
+  --theme-bg-4: #43A047;
+}
+
+/* Night Adventure Theme */
+.theme-night {
+  --background: rgba(26, 26, 46, 0.88);
+  --foreground: #E0E0E0;
+  --card: rgba(22, 33, 62, 0.88);
+  --card-foreground: #E0E0E0;
+  --popover: rgba(22, 33, 62, 0.92);
+  --popover-foreground: #E0E0E0;
+  --primary: #E94560;
+  --primary-foreground: #FFFFFF;
+  --secondary: #533483;
+  --secondary-foreground: #E0E0E0;
+  --muted: rgba(15, 52, 96, 0.7);
+  --muted-foreground: #A0A0B0;
+  --accent: #4FC0D0;
+  --accent-foreground: #FFFFFF;
+  --destructive: #E94560;
+  --border: #533483;
+  --input: #533483;
+  --ring: #E94560;
+  --chart-1: #E94560;
+  --chart-2: #533483;
+  --chart-3: #4FC0D0;
+  --chart-4: #FFD93D;
+  --chart-5: #6BCB77;
+  --sidebar: #0F3460;
+  --sidebar-foreground: #E0E0E0;
+  --sidebar-primary: #E94560;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #533483;
+  --sidebar-accent-foreground: #E0E0E0;
+  --sidebar-border: #533483;
+  --sidebar-ring: #E94560;
+  --theme-bg-1: #0F3460;
+  --theme-bg-2: #533483;
+  --theme-bg-3: #E94560;
+  --theme-bg-4: #4FC0D0;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* ==========================================
+   ANIMATED THEME BACKGROUNDS
+   Full-screen animated gradient backgrounds per theme
+   ========================================== */
+
+.theme-animated-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Craig Of The Creek - Forest/Green animated gradient */
+.theme-animated-bg.bg-craig-of-the-creek {
+  background: linear-gradient(135deg, #A8D5BA 0%, #F5EDDC 25%, #6BCB77 50%, #FF8C42 75%, #A8D5BA 100%);
+  background-size: 400% 400%;
+  animation: gradient-shift 20s ease infinite;
+}
+
+/* Cartoon Network - Bright warm animated gradient */
+.theme-animated-bg.bg-cartoon-network {
+  background: linear-gradient(135deg, #FF5722 0%, #FFC107 25%, #00BCD4 50%, #FFEB3B 75%, #FF5722 100%);
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+/* Adventure Cartoon - Warm desert/adventure gradient */
+.theme-animated-bg.bg-adventure-cartoon {
+  background: linear-gradient(135deg, #FF6F00 0%, #FFB74D 25%, #26A69A 50%, #FFD54F 75%, #FF6F00 100%);
+  background-size: 400% 400%;
+  animation: gradient-shift 18s ease infinite;
+}
+
+/* Forest Cartoon - Deep forest gradient */
+.theme-animated-bg.bg-forest-cartoon {
+  background: linear-gradient(135deg, #2E7D32 0%, #81C784 25%, #8BC34A 50%, #43A047 75%, #2E7D32 100%);
+  background-size: 400% 400%;
+  animation: gradient-shift 22s ease infinite;
+}
+
+/* Night Adventure - Deep space/night gradient */
+.theme-animated-bg.bg-night-adventure {
+  background: linear-gradient(135deg, #0F3460 0%, #533483 25%, #E94560 50%, #4FC0D0 75%, #0F3460 100%);
+  background-size: 400% 400%;
+  animation: gradient-shift 25s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  25% { background-position: 100% 50%; }
+  50% { background-position: 100% 0%; }
+  75% { background-position: 0% 100%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Floating animated blobs behind content */
+.theme-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.35;
+  animation: blob-float 15s ease-in-out infinite;
+}
+
+.theme-blob:nth-child(1) {
+  width: 500px;
+  height: 500px;
+  top: -10%;
+  left: -5%;
+  animation-delay: 0s;
+}
+
+.theme-blob:nth-child(2) {
+  width: 400px;
+  height: 400px;
+  top: 40%;
+  right: -10%;
+  animation-delay: -5s;
+  animation-duration: 18s;
+}
+
+.theme-blob:nth-child(3) {
+  width: 350px;
+  height: 350px;
+  bottom: -5%;
+  left: 30%;
+  animation-delay: -10s;
+  animation-duration: 20s;
+}
+
+@keyframes blob-float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(30px, -40px) scale(1.1);
+  }
+  50% {
+    transform: translate(-20px, 20px) scale(0.95);
+  }
+  75% {
+    transform: translate(15px, 30px) scale(1.05);
+  }
+}
+
+/* ==========================================
+   CARTOON NETWORK / CRAIG OF THE CREEK
+   CUSTOM STYLES
+   ========================================== */
+
+/* Cartoon Card Style - Semi-transparent with backdrop blur */
+.cartoon-card {
+  border: 3px solid var(--foreground);
+  border-radius: 20px;
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 4px 4px 0px var(--foreground);
+  transition: all 0.2s ease;
+}
+
+.cartoon-card:hover {
+  box-shadow: 6px 6px 0px var(--foreground);
+  transform: translate(-2px, -2px);
+}
+
+/* Cartoon Button Style */
+.cartoon-btn {
+  border: 3px solid var(--foreground);
+  border-radius: 16px;
+  box-shadow: 4px 4px 0px var(--foreground);
+  transition: all 0.15s ease;
+  font-weight: 800;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.cartoon-btn:hover {
+  box-shadow: 6px 6px 0px var(--foreground);
+  transform: translate(-2px, -2px);
+}
+
+.cartoon-btn:active {
+  box-shadow: 2px 2px 0px var(--foreground);
+  transform: translate(2px, 2px);
+}
+
+/* Cartoon Input Style */
+.cartoon-input {
+  border: 3px solid var(--foreground);
+  border-radius: 14px;
+  background: var(--card);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 3px 3px 0px var(--foreground);
+  transition: all 0.15s ease;
+  font-weight: 600;
+}
+
+.cartoon-input:focus {
+  box-shadow: 1px 1px 0px var(--foreground);
+  transform: translate(2px, 2px);
+  outline: none;
+  border-color: var(--primary);
+}
+
+/* Cartoon Badge */
+.cartoon-badge {
+  border: 2px solid var(--foreground);
+  border-radius: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 2px 10px;
+  font-size: 0.75rem;
+}
+
+/* Cartoon Text */
+.cartoon-title {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+/* ==========================================
+   FLASH SALE MARQUEE
+   ========================================== */
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee-content {
+  display: flex;
+  animation: marquee 30s linear infinite;
+  width: max-content;
+}
+
+.marquee-content:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ==========================================
+   CARTOON ANIMATIONS
+   ========================================== */
+
+@keyframes bounce-fun {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-bounce-fun {
+  animation: bounce-fun 1.5s ease-in-out infinite;
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(3deg); }
+  75% { transform: rotate(-3deg); }
+}
+
+.animate-wiggle {
+  animation: wiggle 2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 4px 4px 0px var(--foreground), 0 0 15px rgba(255, 140, 66, 0.3); }
+  50% { box-shadow: 4px 4px 0px var(--foreground), 0 0 25px rgba(255, 140, 66, 0.6); }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(0); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+.animate-sparkle {
+  animation: sparkle 1.5s ease-in-out infinite;
+}
+
+@keyframes slide-in-right {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.5s ease-out;
+}
+
+/* ==========================================
+   WEATHER / NATURE EFFECTS
+   ========================================== */
+
+/* Rain Effect */
+@keyframes rain-drop {
+  0% { transform: translateY(-100vh); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+.rain-drop {
+  animation: rain-drop linear infinite;
+}
+
+/* Lightning Flash */
+@keyframes lightning {
+  0%, 100% { opacity: 0; }
+  92% { opacity: 0; }
+  93% { opacity: 1; }
+  94% { opacity: 0; }
+  96% { opacity: 0.8; }
+  97% { opacity: 0; }
+}
+
+.lightning {
+  animation: lightning 8s ease-in-out infinite;
+}
+
+/* Sun Rays */
+@keyframes sun-rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.sun-rays {
+  animation: sun-rotate 20s linear infinite;
+}
+
+/* Cloud Float */
+@keyframes cloud-float {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(20px); }
+}
+
+.cloud-float {
+  animation: cloud-float 6s ease-in-out infinite;
+}
+
+/* Leaf Fall */
+@keyframes leaf-fall {
+  0% { transform: translateY(-20px) rotate(0deg); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+.leaf-fall {
+  animation: leaf-fall linear infinite;
+}
+
+/* Firefly */
+@keyframes firefly {
+  0%, 100% { opacity: 0; transform: translate(0, 0); }
+  25% { opacity: 1; transform: translate(10px, -10px); }
+  50% { opacity: 0.5; transform: translate(-5px, -20px); }
+  75% { opacity: 1; transform: translate(15px, -5px); }
+}
+
+.firefly {
+  animation: firefly 4s ease-in-out infinite;
+}
+
+/* ==========================================
+   LOADING & SHIMMER
+   ========================================== */
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, var(--muted) 25%, var(--card) 50%, var(--muted) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+/* ==========================================
+   SCROLLBAR
+   ========================================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--muted);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+  border: 2px solid var(--foreground);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ring);
+}
+
+/* ==========================================
+   PRINT STYLES
+   ========================================== */
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .print-area, .print-area * {
+    visibility: visible;
+  }
+  .print-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* ==========================================
+   CARTOON DECORATIVE PATTERNS
+   ========================================== */
+
+.pattern-dots {
+  background-image: radial-gradient(var(--foreground) 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.05;
+}
+
+.pattern-zigzag {
+  background: linear-gradient(135deg, var(--primary) 25%, transparent 25%) -10px 0,
+              linear-gradient(225deg, var(--primary) 25%, transparent 25%) -10px 0,
+              linear-gradient(315deg, var(--primary) 25%, transparent 25%),
+              linear-gradient(45deg, var(--primary) 25%, transparent 25%);
+  background-size: 20px 20px;
+  opacity: 0.05;
+}
+
+/* Wobble hover for fun */
+@keyframes wobble {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(3deg); }
+  75% { transform: rotate(-3deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.wobble:hover {
+  animation: wobble 0.4s ease-in-out;
+}
+
+/* ==========================================
+   SMOOTH SCROLLING
+   ========================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ==========================================
+   SUCCESS ANIMATION (for CRUD actions)
+   ========================================== */
+
+@keyframes success-pop {
+  0% { transform: scale(0.8); opacity: 0; }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.animate-success-pop {
+  animation: success-pop 0.4s ease-out;
+}
+
+@keyframes success-check {
+  0% { stroke-dashoffset: 24; }
+  100% { stroke-dashoffset: 0; }
+}
+
+.animate-success-check {
+  stroke-dasharray: 24;
+  stroke-dashoffset: 24;
+  animation: success-check 0.4s ease-out 0.2s forwards;
+}
+
+@keyframes success-ripple {
+  0% { transform: scale(0); opacity: 0.5; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+.animate-success-ripple {
+  animation: success-ripple 0.6s ease-out;
+}
+
+/* Success toast notification style */
+.success-toast {
+  animation: success-pop 0.4s ease-out;
+}
+
+/* Delete shake animation */
+@keyframes delete-shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-5px); }
+  40% { transform: translateX(5px); }
+  60% { transform: translateX(-3px); }
+  80% { transform: translateX(3px); }
+}
+
+.animate-delete-shake {
+  animation: delete-shake 0.4s ease-out;
+}
